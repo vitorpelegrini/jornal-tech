@@ -16,7 +16,7 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 
 ## 🎨 Design
 
-- [🖼️ Protótipo no Figma](https://www.figma.com/) - *(Substituir pelo link do seu projeto quando criar as telas)*
+- [🖼️ Protótipo Navegável (Stitch)](https://stitch.withgoogle.com/projects/9149274644485808707)
 
 ## 🌐 Site em Produção - GitHub Pages
 
