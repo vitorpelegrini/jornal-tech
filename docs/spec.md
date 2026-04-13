@@ -61,5 +61,14 @@ A aplicação utilizará o JSON Server para simular o backend. Abaixo as princip
 
 ## 4. Integração de API Externa
 
-Além da API fake local, o portal consumirá uma **API Pública Real** para mostrar cotações de criptomoedas, preenchendo o requisito de exibição de dados financeiros no Header.
-- **Exemplo de API:** CoinGecko API ou equivalente para resgatar cotações atuais (ex: `/simple/price?ids=bitcoin,ethereum&vs_currencies=brl`).
+Além da API fake local, o portal consumirá **APIs Públicas Reais** para mostrar cotações de criptomoedas e taxas de câmbio, preenchendo o requisito de exibição de dados financeiros no Header.
+- **APIs Escolhidas:** 
+  - **CoinGecko API v3:** Para cotações de criptomoedas (ex: `/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=brl`).
+  - **AwesomeAPI:** Para taxas de câmbio USD/BRL em tempo quase real (ex: `/json/last/USD-BRL`).
+
+## 5. Tecnologias e Versões
+
+Para garantir compatibilidade futura e orientar o desenvolvimento (e agentes de IA), as tecnologias escolhidas seguem nas seguintes versões exatas:
+
+- **Framework CSS:** Bootstrap v5.3.8
+- **APIs Públicas Externas:** CoinGecko API v3 e AwesomeAPI

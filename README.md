@@ -27,6 +27,7 @@ https://vitorpelegrini.github.io/jornal-tech/
 A stack tecnológica foi escolhida para atender 100% aos requisitos (IDs) da disciplina:
 
 - **Framework CSS:** Bootstrap 5 (Utilizando Grid/Flexbox nativos e componentes prontos como Navbar, Modal, Cards e Carousel).
+  - *Justificativa:* O Bootstrap foi escolhido por ser o framework mais popular do mercado, com excelente suporte à responsividade através do seu sistema de grid flexível. Ele fornece componentes visuais ricos (modais, carrosséis) essenciais para um portal de notícias, possui farta documentação, comunidade ativa e licenciamento aberto, o que acelera significativamente a prototipação.
 - **Pré-processador CSS:** Sass (SCSS) com variáveis e mixins.
 - **JavaScript:** 
   - Vanilla JS (ES6+)
@@ -34,7 +35,8 @@ A stack tecnológica foi escolhida para atender 100% aos requisitos (IDs) da dis
   - **jQuery Mask Plugin** - Para máscaras em formulários.
 - **APIs e Dados:**
   - **JSON Server:** Para simular uma API REST (Backend Fake) contendo as notícias e usuários.
-  - **CoinGecko API:** API Pública real para exibir as cotações de criptomoedas atualizadas.
+  - **CoinGecko API e AwesomeAPI:** APIs Públicas reais para exibir as cotações de criptomoedas e de câmbio (USD/BRL) atualizadas.
+    - *Justificativa:* Após reavaliação focada no melhor custo-benefício para projetos acadêmicos brasileiros, optou-se por uma arquitetura combinada: a **CoinGecko API** oferece a maior cobertura de criptomoedas e excelente documentação em seu plano gratuito (Demo), enquanto a **AwesomeAPI** fornece a cotação do dólar (USD/BRL) de forma simples, em tempo quase real e sem necessidade de autenticação complexa. Essa combinação robusta atende perfeitamente à exibição de dados financeiros em nossa aplicação.
   - **Web Storage:** `localStorage` para manter o usuário logado e persistir preferências de tema (Dark/Light mode, opcional).
 - **Ferramentas de Desenvolvimento:** Node.js, NPM, ESLint e Prettier.
 
