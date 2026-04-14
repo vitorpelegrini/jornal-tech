@@ -1,0 +1,402 @@
+// =============================================================
+// _components.scss - Componentes Customizados | Jornal Tech
+// =============================================================
+
+// --- TICKER BAR (Cotações Crypto) ---
+.ticker-bar {
+  background: #0a0e17;
+  color: #fff;
+  padding: 0.375rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  font-size: 0.75rem;
+  @include label-meta;
+
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+
+    .ticker-label {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .ticker-value {
+      font-weight: 700;
+    }
+
+    .ticker-change {
+      font-weight: 600;
+      &.positive { color: #34d399; }
+      &.negative { color: #f87171; }
+    }
+  }
+}
+
+// --- NEWS CARD (Editorial Tile) ---
+.news-card {
+  background: $surface-container-lowest;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  @include cloud-shadow;
+  @include smooth-transition(transform);
+
+  &:hover {
+    transform: translateY(-6px);
+    @include cloud-shadow-hover;
+
+    .news-card__img img {
+      transform: scale(1.1);
+    }
+
+    .news-card__title {
+      color: $primary;
+    }
+  }
+
+  &__img {
+    position: relative;
+    height: 14rem;
+    overflow: hidden;
+
+    img {
+      @include img-cover;
+      @include smooth-transition(transform, 0.5s);
+    }
+  }
+
+  &__category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #fff;
+    font-size: 0.625rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: $border-radius-sm;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    &--hardware { background: $tertiary-container; }
+    &--cyber { background: $primary; }
+    &--reviews { background: #1e293b; }
+    &--mercado { background: $success; }
+    &--software { background: #3b82f6; }
+    &--ia { background: $tertiary; }
+  }
+
+  &__body {
+    padding: 1.5rem;
+  }
+
+  &__date {
+    @include label-meta;
+    color: $outline;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  &__title {
+    font-family: $font-family-headline;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: $on-surface;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+    @include smooth-transition(color);
+  }
+
+  &__excerpt {
+    font-size: 0.875rem;
+    color: $on-surface-variant;
+    @include line-clamp(2);
+    margin-bottom: 1.25rem;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+    padding-top: 1rem;
+
+    .author {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.35);
+    }
+  }
+}
+
+// --- HERO / CARROSSEL ---
+.hero-section {
+  .carousel-item {
+    height: 40rem;
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+
+    @media (max-width: 767.98px) {
+      height: 28rem;
+    }
+
+    img {
+      @include img-cover;
+    }
+  }
+
+  .hero-overlay {
+    @include glass-overlay;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+
+    @media (min-width: 768px) {
+      padding: 4rem;
+    }
+  }
+
+  .hero-category {
+    background: $primary;
+    color: #fff;
+    font-size: 0.625rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: $border-radius-sm;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-family: $font-family-headline;
+    font-size: clamp(1.75rem, 4vw, 3.5rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    max-width: 48rem;
+  }
+}
+
+// --- PAGINATION CUSTOM ---
+.pagination-custom {
+  .page-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    border: 1px solid $outline-variant;
+    color: $on-surface-variant;
+    font-size: 0.875rem;
+    font-weight: 600;
+    @include smooth-transition;
+
+    &:hover {
+      background: $primary;
+      color: #fff;
+      border-color: $primary;
+    }
+  }
+
+  .page-item.active .page-link {
+    background: $primary;
+    color: #fff;
+    border-color: $primary;
+  }
+}
+
+// --- STATUS BADGES ---
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: $border-radius-pill;
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  &--publicado {
+    background: rgba($success, 0.12);
+    color: darken($success, 10%);
+  }
+  &--pendente {
+    background: rgba($warning, 0.2);
+    color: darken($warning, 30%);
+  }
+  &--despublicado {
+    background: rgba($danger, 0.1);
+    color: darken($danger, 5%);
+  }
+}
+
+// --- SECTION HEADER (ID 03 - CSS Grid Layout puro) ---
+.section-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+
+  @media (max-width: 767.98px) {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  &__label {
+    color: $primary;
+    @include label-meta;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  &__title {
+    font-family: $font-family-headline;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: $on-surface;
+  }
+
+  &__link {
+    color: $primary;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    @include smooth-transition;
+
+    &:hover {
+      gap: 1rem;
+    }
+  }
+
+  &__line {
+    height: 1px;
+    background: $outline-variant;
+    opacity: 0.2;
+  }
+}
+
+// --- READING PROGRESS BAR ---
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: $primary;
+  z-index: 1100;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+// --- FOOTER CUSTOM (ID 03 - CSS Grid Layout puro) ---
+.footer-custom {
+  background: #0a0e17;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3rem 0;
+
+  // (ID 03) CSS Grid Layout puro, sem Bootstrap
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+    }
+  }
+
+  &__brand {
+    font-family: $font-family-headline;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.7;
+    max-width: 20rem;
+  }
+
+  &__heading {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+  }
+
+  &__link {
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    font-size: 0.875rem;
+    display: inline-block;
+    @include smooth-transition;
+
+    &:hover {
+      color: #60a5fa;
+      transform: translateX(4px);
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 2rem;
+    margin-top: 3rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
+  }
+}
+
+// --- ADMIN TABLE ACTIONS ---
+.action-btn {
+  padding: 0.375rem;
+  border-radius: $border-radius;
+  color: $on-surface-variant;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  @include smooth-transition;
+
+  &:hover {
+    &.action-btn--edit { color: $primary; background: rgba($primary, 0.08); }
+    &.action-btn--delete { color: $error; background: rgba($error, 0.08); }
+    &.action-btn--publish { color: $success; background: rgba($success, 0.08); }
+    &.action-btn--unpublish { color: $primary; background: rgba($primary, 0.08); }
+  }
+}
+
+// --- LOGIN CARD ---
+.login-card {
+  background: $surface-container-lowest;
+  border-radius: $border-radius-xl;
+  padding: 2rem;
+  @include cloud-shadow;
+  border: 1px solid rgba($outline-variant, 0.15);
+  max-width: 400px;
+  width: 100%;
+}
+
+// --- SIDEBAR WIDGET ---
+.sidebar-widget {
+  background: $surface-container-lowest;
+  border-radius: $border-radius-lg;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  @include cloud-shadow;
+}

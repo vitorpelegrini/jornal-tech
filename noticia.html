@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Leia a notícia completa no Jornal Tech - Portal de notícias de tecnologia.">
+  <title>Jornal Tech | Carregando...</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5.3.8 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="reading-progress"></div>
+
+  <!-- ============================================================= -->
+  <!-- 1. TICKER BAR                                                 -->
+  <!-- ============================================================= -->
+  <div class="ticker-bar">
+    <div class="container-editorial d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-4 align-items-center">
+        <span class="ticker-item">
+          <span class="ticker-label">BTC:</span>
+          <span class="ticker-value" id="btc-value">Carregando...</span>
+          <span class="ticker-change" id="btc-change">--</span>
+        </span>
+        <span class="ticker-item">
+          <span class="ticker-label">ETH:</span>
+          <span class="ticker-value" id="eth-value">Carregando...</span>
+          <span class="ticker-change" id="eth-change">--</span>
+        </span>
+        <span class="ticker-item d-none d-md-inline-flex">
+          <span class="ticker-label">SOL:</span>
+          <span class="ticker-value" id="sol-value">Carregando...</span>
+          <span class="ticker-change" id="sol-change">--</span>
+        </span>
+        <span class="ticker-item d-none d-lg-inline-flex">
+          <span class="ticker-label">USD:</span>
+          <span class="ticker-value" id="usd-value">Carregando...</span>
+          <span class="ticker-change" id="usd-change">--</span>
+        </span>
+      </div>
+      <div class="d-none d-sm-block text-white-50 small" id="current-date"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- 2. NAVBAR                                                     -->
+  <!-- ============================================================= -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top border-bottom">
+    <div class="container-editorial d-flex justify-content-between align-items-center w-100">
+      <a class="navbar-brand fw-bold" href="index.html" style="font-family: 'Manrope', sans-serif; font-size: 1.5rem; letter-spacing: -0.03em; color: #0057cd;">
+        Jornal Tech
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav2">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav2">
+        <ul class="navbar-nav gap-lg-4">
+          <li class="nav-item"><a class="nav-link text-secondary" href="index.html">Mercado</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="#">Crypto</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="#">IA</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="#">Gadgets</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="#">Reviews</a></li>
+        </ul>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <div class="d-none d-lg-flex align-items-center bg-light rounded-pill px-3 py-1">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 1.2rem;">search</span>
+          <input type="text" class="form-control form-control-sm border-0 bg-transparent shadow-none" placeholder="Pesquisar..." style="width: 8rem;">
+        </div>
+        <a href="login.html" class="btn btn-primary btn-sm fw-bold px-3 py-2 rounded-3">Acesso Restrito</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================= -->
+  <!-- 3. CONTEÚDO DA NOTÍCIA (Layout 3 colunas)                     -->
+  <!-- ============================================================= -->
+  <main class="container-editorial py-4 py-md-5">
+    <article class="row g-4">
+
+      <!-- Sidebar Esquerda: Social / Meta -->
+      <div class="col-lg-1 d-none d-lg-block">
+        <div class="sticky-top d-flex flex-column align-items-center gap-4 pt-5" style="top: 6rem;">
+          <button class="btn btn-link text-secondary p-0" title="Compartilhar">
+            <span class="material-symbols-outlined">share</span>
+          </button>
+          <button class="btn btn-link text-secondary p-0" title="Salvar">
+            <span class="material-symbols-outlined">bookmark</span>
+          </button>
+          <div style="width: 2rem; height: 1px; background: #c2c6d8;"></div>
+          <span class="text-meta" style="writing-mode: vertical-rl; transform: rotate(180deg);">6 min read</span>
+        </div>
+      </div>
+
+      <!-- Conteúdo Principal -->
+      <div class="col-lg-8">
+        <!-- Article Header -->
+        <header class="mb-4">
+          <span class="badge bg-primary mb-3" style="font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;" id="noticia-categoria">CARREGANDO...</span>
+          <h1 class="mb-3" id="noticia-titulo">Carregando notícia...</h1>
+          <p class="lead text-muted fst-italic fw-light" id="noticia-subtitulo"></p>
+
+          <div class="d-flex align-items-center gap-3 py-3 border-top border-bottom mt-4" style="border-color: rgba(194,198,216,0.3) !important;">
+            <div class="rounded-circle overflow-hidden bg-light" style="width: 3rem; height: 3rem;">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzKdiYEqlybA9fOH0YNHonIb-BFTYV513GOt3L21c6G7HLDn_AeAbmWi3s4ebA1w239TdTb6EUYu9KgpQbZ-GJ4mRr67E4Hg9qPGrUN0AcOjzp25w0le9QyriAemaWNrLRnIpjL3ZYg5nFkNJJfqOQzNM3EyjJzq9oWn0gx1Vgyu4uCfZPW9KCjM0ipgdvx3iQz-hy-30RgnZfr4YImkGFJS0-5hyy_rYYNjyMTBUG7IK9tab9aTGZazdY4i8ie3xiB2AXor-bAJs" alt="Autor" class="img-cover" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div>
+              <p class="fw-bold small mb-0">Equipe Jornal Tech</p>
+              <time class="text-meta" id="noticia-data">Carregando...</time>
+            </div>
+          </div>
+        </header>
+
+        <!-- (ID 10) Otimização de imagens com <picture> e srcset -->
+        <figure class="mb-4 rounded-4 overflow-hidden shadow">
+          <picture>
+            <source media="(max-width: 576px)" srcset="" id="noticia-img-sm">
+            <source media="(max-width: 992px)" srcset="" id="noticia-img-md">
+            <img id="noticia-img" src="" alt="" class="w-100" style="aspect-ratio: 16/9; object-fit: cover;" loading="lazy">
+          </picture>
+          <figcaption class="p-3 small fst-italic text-muted border-start border-4 border-primary" style="background: #f3f4f5;">
+            Imagem de capa da matéria. (Crédito: Jornal Tech)
+          </figcaption>
+        </figure>
+
+        <!-- Article Body -->
+        <div class="article-body mb-5" id="noticia-corpo" style="font-size: 1.1rem; line-height: 1.8; color: #424655;">
+          <p class="text-center text-muted py-5">Carregando conteúdo...</p>
+        </div>
+
+        <!-- Tags -->
+        <div class="d-flex flex-wrap gap-2 mt-4">
+          <a href="#" class="badge rounded-pill bg-light text-dark fw-bold text-decoration-none px-3 py-2">#TECNOLOGIA</a>
+          <a href="#" class="badge rounded-pill bg-light text-dark fw-bold text-decoration-none px-3 py-2">#INOVAÇÃO</a>
+          <a href="#" class="badge rounded-pill bg-light text-dark fw-bold text-decoration-none px-3 py-2">#HARDWARE</a>
+          <a href="#" class="badge rounded-pill bg-light text-dark fw-bold text-decoration-none px-3 py-2">#FUTURO</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Direita -->
+      <aside class="col-lg-3">
+        <!-- Newsletter Widget -->
+        <div class="sidebar-widget mb-4">
+          <h4 class="d-flex align-items-center gap-2 fw-bold mb-3" style="font-size: 1rem;">
+            <span class="material-symbols-outlined text-primary">mail</span>
+            Briefing Jornal Tech
+          </h4>
+          <p class="text-muted small mb-3">Receba as análises mais profundas direto no seu e-mail.</p>
+          <input type="email" class="form-control form-control-custom mb-2" placeholder="Seu e-mail profissional">
+          <button class="btn btn-primary w-100 fw-bold text-uppercase" style="letter-spacing: 0.1em; font-size: 0.75rem;">Inscrever-se</button>
+        </div>
+
+        <!-- Mais Lidas -->
+        <div class="mt-4">
+          <h4 class="fw-bold text-uppercase border-bottom border-2 border-primary pb-2 d-inline-block mb-3" style="font-size: 0.8rem; letter-spacing: 0.1em;">MAIS LIDAS</h4>
+          <div class="d-flex flex-column gap-3">
+            <a href="#" class="text-decoration-none text-dark d-block">
+              <span class="text-primary fw-bold fst-italic me-1" style="font-size: 1.1rem;">01</span>
+              <span class="fw-bold small">NVIDIA atinge valor de mercado recorde após anúncio do Blackwell.</span>
+            </a>
+            <a href="#" class="text-decoration-none text-dark d-block">
+              <span class="text-primary fw-bold fst-italic me-1" style="font-size: 1.1rem;">02</span>
+              <span class="fw-bold small">Cibersegurança: O novo exploit que afeta roteadores domésticos.</span>
+            </a>
+            <a href="#" class="text-decoration-none text-dark d-block">
+              <span class="text-primary fw-bold fst-italic me-1" style="font-size: 1.1rem;">03</span>
+              <span class="fw-bold small">Starlink Mini: Internet via satélite agora cabe na mochila.</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </article>
+
+    <!-- ============================================================= -->
+    <!-- NOTÍCIAS RELACIONADAS                                         -->
+    <!-- ============================================================= -->
+    <section class="mt-5 pt-5 border-top" style="border-color: rgba(194,198,216,0.2) !important;">
+      <div class="section-header">
+        <div>
+          <span class="section-header__label">Sugestões</span>
+          <h2 class="section-header__title">Veja Também</h2>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="related-grid">
+        <!-- Gerado via JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================= -->
+  <!-- FOOTER                                                        -->
+  <!-- ============================================================= -->
+  <footer class="footer-custom mt-5">
+    <div class="container-editorial">
+      <div class="row g-4">
+        <div class="col-12 col-md-3">
+          <span class="footer-custom__brand">Jornal Tech</span>
+          <p class="footer-custom__desc">O Portal Editorial da Tecnologia. Entregando precisão jornalística e curadoria técnica para profissionais da era digital.</p>
+          <div class="d-flex gap-3 mt-3">
+            <span class="material-symbols-outlined text-white-50" role="button">share</span>
+            <span class="material-symbols-outlined text-white-50" role="button">rss_feed</span>
+            <span class="material-symbols-outlined text-white-50" role="button">alternate_email</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <h4 class="footer-custom__heading">Navegação</h4>
+          <ul class="list-unstyled d-flex flex-column gap-2">
+            <li><a class="footer-custom__link" href="index.html">Mercado</a></li>
+            <li><a class="footer-custom__link" href="#">Hardware</a></li>
+            <li><a class="footer-custom__link" href="#">Cibersegurança</a></li>
+            <li><a class="footer-custom__link" href="#">Reviews</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h4 class="footer-custom__heading">Institucional</h4>
+          <ul class="list-unstyled d-flex flex-column gap-2">
+            <li><a class="footer-custom__link" href="#">Sobre Nós</a></li>
+            <li><a class="footer-custom__link" href="#">Anuncie</a></li>
+            <li><a class="footer-custom__link" href="#">Privacidade</a></li>
+            <li><a class="footer-custom__link" href="#">Termos de Uso</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3">
+          <h4 class="footer-custom__heading">Newsletter</h4>
+          <p class="text-white-50 small mb-3">Receba os highlights tecnológicos diretamente no seu e-mail.</p>
+          <div class="input-group">
+            <input type="email" class="form-control form-control-sm bg-dark border-secondary text-white" placeholder="E-mail">
+            <button class="btn btn-primary btn-sm"><span class="material-symbols-outlined" style="font-size: 1rem;">send</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-custom__bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="mb-0">© 2024 Jornal Tech. O Portal Editorial da Tecnologia.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/noticia.js"></script>
+
+</body>
+</html>

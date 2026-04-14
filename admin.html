@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Painel Administrativo do Jornal Tech - Gerenciamento de notícias.">
+  <title>Jornal Tech - Painel Administrativo</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5.3.8 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/main.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- ============================================================= -->
+  <!-- NAVBAR ADMIN                                                  -->
+  <!-- ============================================================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-secondary shadow">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand fw-bold" href="admin.html" style="font-family: 'Manrope', sans-serif; letter-spacing: -0.03em;">
+        Jornal Tech <span class="text-primary">Admin</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="adminNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fw-bold text-white border-bottom border-2 border-primary pb-1" href="#">Artigos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">Categorias</a>
+          </li>
+        </ul>
+
+        <!-- Right side -->
+        <div class="d-flex align-items-center gap-3">
+          <!-- Search -->
+          <div class="input-group input-group-sm d-none d-lg-flex" style="width: 16rem;">
+            <span class="input-group-text bg-dark border-secondary text-secondary">
+              <span class="material-symbols-outlined" style="font-size: 1rem;">search</span>
+            </span>
+            <input type="text" class="form-control bg-dark border-secondary text-white" placeholder="Buscar notícias...">
+          </div>
+
+          <!-- Icons -->
+          <button class="btn btn-dark btn-sm position-relative" title="Notificações">
+            <span class="material-symbols-outlined">notifications</span>
+          </button>
+          <button class="btn btn-dark btn-sm" title="Perfil">
+            <span class="material-symbols-outlined">account_circle</span>
+          </button>
+
+          <div class="vr bg-secondary mx-1" style="height: 1.5rem;"></div>
+
+          <!-- Admin name + Logout -->
+          <span class="text-secondary small d-none d-md-inline" id="admin-name">Admin</span>
+          <button class="btn btn-outline-secondary btn-sm text-uppercase fw-bold" style="font-size: 0.65rem; letter-spacing: 0.1em;" id="btn-logout">
+            Sair
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================= -->
+  <!-- MAIN CONTENT                                                  -->
+  <!-- ============================================================= -->
+  <main class="flex-grow-1 px-3 px-md-4 py-4" style="max-width: 80rem; margin: 0 auto; width: 100%;">
+    <!-- Header -->
+    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-4">
+      <div>
+        <h1 class="h3 fw-bold mb-1" style="font-family: 'Manrope', sans-serif; letter-spacing: -0.02em;">Gerenciamento de Notícias</h1>
+        <p class="text-muted small mb-0">Controle editorial de todas as publicações do portal.</p>
+      </div>
+      <button class="btn btn-primary fw-semibold d-flex align-items-center gap-2 shadow-sm" id="btn-nova-noticia">
+        <span class="material-symbols-outlined">add</span>
+        Criar Nova Notícia
+      </button>
+    </div>
+
+    <!-- News Table (ID 04 - Bootstrap Table) -->
+    <div class="bg-white rounded-4 shadow-sm border overflow-hidden" style="border-color: rgba(194,198,216,0.15) !important;">
+      <div class="table-responsive">
+        <table class="table table-hover mb-0 align-middle">
+          <thead>
+            <tr style="background: #f3f4f5;">
+              <th class="px-4 py-3 text-uppercase small fw-bold text-muted" style="font-size: 0.65rem; letter-spacing: 0.1em;">Capa</th>
+              <th class="px-4 py-3 text-uppercase small fw-bold text-muted" style="font-size: 0.65rem; letter-spacing: 0.1em;">Título</th>
+              <th class="px-4 py-3 text-uppercase small fw-bold text-muted" style="font-size: 0.65rem; letter-spacing: 0.1em;">Data</th>
+              <th class="px-4 py-3 text-uppercase small fw-bold text-muted" style="font-size: 0.65rem; letter-spacing: 0.1em;">Status</th>
+              <th class="px-4 py-3 text-uppercase small fw-bold text-muted text-end" style="font-size: 0.65rem; letter-spacing: 0.1em;">Ações</th>
+            </tr>
+          </thead>
+          <tbody id="admin-table-body">
+            <tr>
+              <td colspan="5" class="text-center py-5 text-muted">
+                <div class="spinner-border text-primary spinner-border-sm me-2" role="status"></div>
+                Carregando notícias...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination footer -->
+      <div class="px-4 py-3 d-flex align-items-center justify-content-between border-top" style="background: #f3f4f5; border-color: rgba(194,198,216,0.1) !important;">
+        <span class="small text-muted" id="news-count">Carregando...</span>
+        <div class="d-flex gap-2" id="admin-pagination">
+          <!-- Gerado via JS -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================================================= -->
+  <!-- MODAL - Nova/Editar Notícia (ID 04 - Bootstrap Modal)         -->
+  <!-- ============================================================= -->
+  <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg rounded-4">
+        <!-- Header -->
+        <div class="modal-header px-4 py-3 border-bottom" style="border-color: rgba(194,198,216,0.1) !important;">
+          <h5 class="modal-title fw-bold" id="modal-title" style="font-family: 'Manrope', sans-serif;">Nova Notícia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+
+        <!-- Body / Form (ID 11, 12, 13) -->
+        <form id="news-form" novalidate>
+          <div class="modal-body p-4">
+            <div class="row g-3">
+              <!-- Título (ID 11 - required, minlength) -->
+              <div class="col-12">
+                <label for="news-titulo" class="form-label-custom">Título da Notícia</label>
+                <input type="text" class="form-control" id="news-titulo" placeholder="Ex: Novo processador Apple M4 chega ao mercado" required minlength="5">
+                <div class="invalid-feedback" id="titulo-feedback">O título deve ter no mínimo 5 caracteres e começar com maiúscula.</div>
+              </div>
+
+              <!-- Imagem -->
+              <div class="col-md-6">
+                <label for="news-imagem" class="form-label-custom">URL da Imagem de Capa</label>
+                <input type="url" class="form-control" id="news-imagem" placeholder="https://exemplo.com/imagem.jpg">
+              </div>
+
+              <!-- Status (ID 13 - select) -->
+              <div class="col-md-6">
+                <label for="news-status" class="form-label-custom">Status</label>
+                <select class="form-select" id="news-status">
+                  <option value="pendente" selected>Pendente</option>
+                  <option value="publicado">Publicado</option>
+                  <option value="despublicado">Despublicado</option>
+                </select>
+              </div>
+
+              <!-- Data com máscara (ID 21 - jQuery Mask) -->
+              <div class="col-md-6">
+                <label for="news-date-input" class="form-label-custom">Data (opcional)</label>
+                <input type="text" class="form-control" id="news-date-input" placeholder="DD/MM/AAAA">
+              </div>
+
+              <!-- Conteúdo (ID 11 - required) -->
+              <div class="col-12">
+                <label for="news-conteudo" class="form-label-custom">Conteúdo</label>
+                <textarea class="form-control" id="news-conteudo" rows="6" placeholder="Escreva o corpo da notícia aqui..." required minlength="20"></textarea>
+                <div class="invalid-feedback">O conteúdo deve ter no mínimo 20 caracteres.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="modal-footer px-4 py-3 border-top" style="border-color: rgba(194,198,216,0.1) !important;">
+            <button type="button" class="btn btn-light fw-semibold" data-bs-dismiss="modal" id="btn-cancel-modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary fw-semibold shadow-sm" id="btn-save-news">Salvar Notícia</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- FOOTER                                                        -->
+  <!-- ============================================================= -->
+  <footer class="bg-white py-4 border-top mt-auto">
+    <div class="container-fluid px-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <span class="small text-muted">© 2024 Jornal Tech - Painel Administrativo. Todos os direitos reservados.</span>
+      <div class="d-flex gap-4">
+        <a href="#" class="small text-muted text-decoration-underline">Privacidade</a>
+        <a href="#" class="small text-muted text-decoration-underline">Termos de Uso</a>
+        <a href="#" class="small text-muted text-decoration-underline">Suporte Técnico</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- jQuery Mask Plugin (ID 21) -->
+  <script src="node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- App Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/admin.js"></script>
+
+</body>
+</html>

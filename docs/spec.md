@@ -1,74 +1,77 @@
-# 🛠️ Especificação Técnica (Tech Spec) - Jornal Tech
+# 🛠️ Especificação Técnica - Jornal Tech
 
-Este documento detalha a arquitetura técnica, o modelo de dados e os contratos de API (via JSON Server) necessários para a aplicação Jornal Tech.
+## 1. Modelo de Dados (DER Simplificado)
 
-## 1. Modelo de Dados (Diagrama ER)
-
-Abaixo está o Diagrama Entidade-Relacionamento (DER) que representa a estrutura de dados que será simulada em nosso `db.json`.
-
-```mermaid
-erDiagram
-    ADMINISTRADOR ||--o{ NOTICIA : "gerencia"
-    
-    ADMINISTRADOR {
-        string id PK "Gerado automaticamente"
-        string nome
-        string email "Usado para o login"
-        string senha
-    }
-    
-    NOTICIA {
-        string id PK
-        string titulo
-        string conteudo
-        string imagemCapa "URL ou caminho da imagem"
-        string status "pendente, publicado ou despublicado"
-        string dataCriacao "Formato ISO"
-        string administradorId FK "Vínculo com o autor"
-    }
+```
+┌────────────────────┐         ┌────────────────────────┐
+│   administradores  │         │        noticias        │
+├────────────────────┤         ├────────────────────────┤
+│ id          string │◄────────│ administradorId string │
+│ nome        string │   1:N   │ id              string │
+│ email       string │         │ titulo          string │
+│ senha       string │         │ conteudo        string │
+└────────────────────┘         │ imagemCapa      string │
+                               │ status          string │
+                               │ dataCriacao     string │
+                               └────────────────────────┘
 ```
 
 ## 2. Dicionário de Dados
 
-Breve explicação das entidades:
+### Tabela `administradores`
 
-- **Administradores:** Armazena os dados dos jornalistas e editores que possuem acesso ao painel de controle.
-  - `id`: Identificador único.
-  - `email`: Chave de acesso ao painel.
-  - `senha`: Senha de acesso.
-  
-- **Noticias:** Representa as matérias que serão exibidas (ou não) na página principal e de leitura.
-  - `id`: Identificador da matéria.
-  - `titulo` e `conteudo`: Textos da matéria.
-  - `imagemCapa`: Referência visual da notícia.
-  - `status`: Campo vital que dita a regra de negócio. O front-end da página pública deve fazer um `GET` filtrando apenas as notícias com `status="publicado"`.
-  - `administradorId`: Chave estrangeira que indica quem criou a matéria.
+| Campo | Tipo | Obrigatório | Descrição |
+|-------|------|:-----------:|-----------|
+| `id` | string | ✅ | Identificador único |
+| `nome` | string | ✅ | Nome completo do administrador |
+| `email` | string | ✅ | E-mail institucional (validado com REGEX) |
+| `senha` | string | ✅ | Senha de acesso (armazenada em texto para fins acadêmicos) |
 
-## 3. Rotas da API (JSON Server)
+### Tabela `noticias`
 
-A aplicação utilizará o JSON Server para simular o backend. Abaixo as principais rotas planejadas:
+| Campo | Tipo | Obrigatório | Descrição |
+|-------|------|:-----------:|-----------|
+| `id` | string | ✅ | Identificador único |
+| `titulo` | string | ✅ | Título da notícia (min. 5 chars, deve iniciar com maiúscula) |
+| `conteudo` | string | ✅ | Corpo completo da notícia (min. 20 chars) |
+| `imagemCapa` | string | ❌ | URL da imagem de capa |
+| `status` | string | ✅ | `publicado`, `pendente` ou `despublicado` |
+| `dataCriacao` | string (ISO) | ✅ | Data/hora de criação (ISO 8601) |
+| `administradorId` | string | ✅ | FK para a tabela `administradores` |
 
-- **Notícias**
-  - `GET /noticias`: Retorna a lista de todas as notícias (Usado no painel administrativo).
-  - `GET /noticias?status=publicado`: Retorna apenas as notícias publicadas (Usado na home pública e carrossel).
-  - `GET /noticias/:id`: Retorna os detalhes de uma notícia específica (Página da Notícia).
-  - `POST /noticias`: Cria uma nova notícia (com status `pendente`).
-  - `PUT /noticias/:id`: Atualiza dados de uma notícia existente (ou altera o `status` para Publicar/Despublicar).
-  - `DELETE /noticias/:id`: Remove a matéria.
+## 3. Rotas da API (JSON Server - porta 3000)
 
-- **Administradores (Autenticação Simulada)**
-  - `GET /administradores?email={email}&senha={senha}`: Endpoint que será usado pela página de login para validar credenciais.
+### Administradores
 
-## 4. Integração de API Externa
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| `GET` | `/administradores?email=X&senha=Y` | Autenticação simulada (login) |
 
-Além da API fake local, o portal consumirá **APIs Públicas Reais** para mostrar cotações de criptomoedas e taxas de câmbio, preenchendo o requisito de exibição de dados financeiros no Header.
-- **APIs Escolhidas:** 
-  - **CoinGecko API v3:** Para cotações de criptomoedas (ex: `/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=brl`).
-  - **AwesomeAPI:** Para taxas de câmbio USD/BRL em tempo quase real (ex: `/json/last/USD-BRL`).
+### Notícias
 
-## 5. Tecnologias e Versões
+| Método | Rota | Descrição | ID Atendido |
+|--------|------|-----------|:-----------:|
+| `GET` | `/noticias?status=publicado&_sort=dataCriacao&_order=desc` | Lista notícias publicadas (Home) | 23 |
+| `GET` | `/noticias/:id` | Detalhe de uma notícia (Leitura) | 23 |
+| `GET` | `/noticias?_sort=dataCriacao&_order=desc` | Lista todas as notícias (Admin) | 23 |
+| `POST` | `/noticias` | Cria uma nova notícia | 22 |
+| `PUT` | `/noticias/:id` | Atualiza uma notícia existente | 22 |
+| `PATCH` | `/noticias/:id` | Altera o status (publicar/despublicar) | 22 |
+| `DELETE` | `/noticias/:id` | Exclui uma notícia permanentemente | 22 |
 
-Para garantir compatibilidade futura e orientar o desenvolvimento (e agentes de IA), as tecnologias escolhidas seguem nas seguintes versões exatas:
+## 4. APIs Públicas Externas (ID 24)
 
-- **Framework CSS:** Bootstrap v5.3.8
-- **APIs Públicas Externas:** CoinGecko API v3 e AwesomeAPI
+| API | Endpoint | Dados Obtidos |
+|-----|----------|---------------|
+| **CoinGecko** | `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=brl&include_24hr_change=true` | Preço e variação 24h de BTC, ETH, SOL em BRL |
+| **AwesomeAPI** | `https://economia.awesomeapi.com.br/json/last/USD-BRL` | Cotação do dólar americano em reais e variação percentual |
+
+## 5. Fluxo de Autenticação
+
+1. Usuário acessa `login.html` e preenche e-mail + senha
+2. Validação REGEX do e-mail no frontend (ID 12)
+3. `GET /administradores?email=X&senha=Y` ao JSON Server (ID 22)
+4. Se retorno `data.length > 0`: salva `admin` no `localStorage` e redireciona para `admin.html` (ID 14)
+5. Se retorno vazio: exibe mensagem de erro
+6. Páginas admin verificam `requireAuth()` no carregamento - redireciona para login se não autenticado,
+7. Logout: remove `localStorage` e redireciona para login

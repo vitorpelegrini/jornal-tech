@@ -1,0 +1,146 @@
+// =============================================================
+// main.scss - Arquivo Principal | Jornal Tech
+// =============================================================
+// Imports em ordem: variables → bootstrap → custom
+
+// 1. Variáveis customizadas (ANTES do Bootstrap)
+@import 'variables';
+
+// 2. Bootstrap (CDN não é importado via Sass, usamos separado no HTML)
+//    Mas as variáveis acima serão aplicadas via CSS custom properties
+
+// 3. Mixins
+@import 'mixins';
+
+// 4. Tipografia
+@import 'typography';
+
+// 5. Componentes
+@import 'components';
+
+// =============================================================
+// ESTILOS GLOBAIS
+// =============================================================
+
+body {
+  font-family: $font-family-body;
+  background-color: $body-bg;
+  color: $on-surface;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Google Fonts import
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;700;800&display=swap');
+
+// Material Symbols
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+// Selection color
+::selection {
+  background: rgba($primary, 0.15);
+  color: $on-surface;
+}
+
+// Smooth scroll
+html {
+  scroll-behavior: smooth;
+}
+
+// Max width container override
+.container-editorial {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+// Link reset for cards
+a.card-link {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+// Responsive img utility
+.img-cover {
+  @include img-cover;
+}
+
+// Navbar brand override
+.navbar-brand-custom {
+  font-family: $font-family-headline;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff !important;
+}
+
+// Table thumb in admin
+.table-thumb {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: $border-radius;
+  @include smooth-transition(transform);
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
+// Form label uniform
+.form-label-custom {
+  @include label-meta;
+  color: $on-surface-variant;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+// No visible border for inputs (Stitch style)
+.form-control-custom {
+  background: $surface-container-low;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: $border-radius;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: $on-surface;
+  @include smooth-transition;
+
+  &:focus {
+    border-bottom-color: $primary;
+    box-shadow: none;
+    background: $surface-container-low;
+  }
+
+  &::placeholder {
+    color: rgba($outline, 0.5);
+  }
+}
+
+// Decorative line
+.deco-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.4;
+
+  &__line {
+    height: 1px;
+    width: 2rem;
+    background: $on-surface-variant;
+  }
+
+  &__text {
+    @include label-meta;
+    color: $on-surface-variant;
+  }
+}

@@ -1,0 +1,92 @@
+// =============================================================
+// _variables.scss - Design System Tokens | Jornal Tech
+// =============================================================
+// Sobrescreve variáveis do Bootstrap ANTES de importá-lo.
+// Referência: docs/design-system.md
+
+// --- 1. CORES ---
+
+// Cores Primárias
+$primary: #0d6efd;
+$primary-dark: #0057cd;
+$secondary: #6c757d;
+
+// Cores de Fundo
+$body-bg: #f8f9fa;
+$dark: #212529;
+
+// Superfícies (Design System Stitch)
+$surface: #f8f9fa;
+$surface-container-lowest: #ffffff;
+$surface-container-low: #f3f4f5;
+$surface-container: #edeeef;
+$surface-container-high: #e7e8e9;
+$surface-container-highest: #e1e3e4;
+
+// Texto
+$on-surface: #191c1d;
+$on-surface-variant: #424655;
+$outline: #727787;
+$outline-variant: #c2c6d8;
+
+// Cores de Status
+$success: #198754;
+$warning: #ffc107;
+$danger: #dc3545;
+$error: #ba1a1a;
+
+// Terciárias (Accent)
+$tertiary: #a63b00;
+$tertiary-container: #cf4b00;
+
+// --- 2. TIPOGRAFIA ---
+$font-family-headline: 'Manrope', sans-serif;
+$font-family-body: 'Inter', sans-serif;
+$font-family-base: $font-family-body;
+$headings-font-family: $font-family-headline;
+$headings-font-weight: 700;
+
+// --- 3. FORMA / BORDER RADIUS ---
+$border-radius: 0.5rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.75rem;
+$border-radius-xl: 1rem;
+$border-radius-pill: 50rem;
+
+// Card
+$card-border-radius: $border-radius-lg;
+$card-border-width: 0;
+$card-spacer-y: 1.5rem;
+$card-spacer-x: 1.5rem;
+
+// --- 4. SOBRESCRITAS BOOTSTRAP ---
+$body-color: $on-surface;
+$link-color: $primary;
+$enable-rounded: true;
+$enable-shadows: false;
+$enable-negative-margins: true;
+
+// Navbar
+$navbar-dark-color: rgba(255, 255, 255, 0.85);
+$navbar-dark-hover-color: $primary;
+
+// Botões
+$btn-border-radius: 0.375rem;
+$btn-font-weight: 700;
+$btn-padding-y: 0.625rem;
+$btn-padding-x: 1.25rem;
+
+// Modal
+$modal-content-border-width: 0;
+$modal-content-border-radius: $border-radius-xl;
+
+// Input
+$input-bg: $surface-container-low;
+$input-border-color: transparent;
+$input-focus-border-color: $primary;
+$input-border-radius: $border-radius;
+$input-padding-y: 0.75rem;
+$input-padding-x: 1rem;
+
+// Table
+$table-hover-bg: $surface-container;

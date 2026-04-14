@@ -1,12 +1,18 @@
 {
   "name": "jornal-tech",
   "version": "1.0.0",
-  "description": "Este projeto tem como objetivo desenvolver uma aplicação web responsiva para um portal de notícias de tecnologia. A aplicação possuirá uma área pública para os visitantes lerem notícias e acompanharem cotações de criptomoedas, além de um painel administrativo para o gerenciamento de conteúdo (criação, edição, publicação e exclusão de notícias).",
+  "description": "Portal de notícias de tecnologia - Projeto acadêmico UTFPR",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
+    "sass:build": "sass scss/main.scss css/main.css --style=compressed",
+    "sass:watch": "sass scss/main.scss css/main.css --watch --style=expanded",
+    "json:server": "json-server --watch db.json --port 3000",
+    "dev": "concurrently \"npm run sass:watch\" \"npm run json:server\"",
+    "lint": "eslint js/",
+    "format": "prettier --write \"js/**/*.js\" \"scss/**/*.scss\" \"*.html\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -14,7 +20,7 @@
     "url": "git+https://github.com/vitorpelegrini/jornal-tech.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Vitor Pelegrini de Souza",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
@@ -22,10 +28,17 @@
   },
   "homepage": "https://github.com/vitorpelegrini/jornal-tech#readme",
   "dependencies": {
+    "bootstrap": "^5.3.8",
     "jquery": "^4.0.0",
+    "jquery-mask-plugin": "^1.14.16",
     "uuid": "^13.0.0"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "concurrently": "^9.1.2",
+    "eslint": "^10.2.0",
+    "gh-pages": "^6.3.0",
+    "json-server": "^0.17.4",
+    "prettier": "^3.8.2",
+    "sass": "^1.89.1"
   }
 }
