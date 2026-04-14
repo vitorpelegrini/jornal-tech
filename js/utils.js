@@ -35,7 +35,7 @@ function formatDate(isoDate) {
 }
 
 /**
- * Formata data ISO para formato longo (ex: 29 de Maio de 2024)
+ * Formata data ISO para formato longo (ex: 29 de Maio de 2026)
  * @param {string} isoDate
  * @returns {string}
  */

@@ -14,7 +14,7 @@
       "conteudo": "A Inteligência Artificial deixou de ser ficção científica para se tornar o motor da transformação global. Modelos de linguagem de última geração estão revolucionando setores inteiros, desde a medicina até o direito. A capacidade de processar e gerar texto com coerência quase humana abre portas para automações que antes eram inimagináveis.\n\nEspecialistas alertam, no entanto, que a corrida pela IA Geral (AGI) exige um debate ético profundo. Questões como viés algorítmico, privacidade de dados e o futuro do trabalho humano precisam ser endereçadas com urgência pela comunidade tecnológica e pelos legisladores.\n\nA indústria estima que até 2028, mais de 40% das tarefas cognitivas repetitivas serão automatizadas, liberando profissionais para atividades de maior valor criativo e estratégico.",
       "imagemCapa": "https://lh3.googleusercontent.com/aida-public/AB6AXuCm2peubdW00JPUUokaFgWGQwVR-GqcCVnpetb21XHUTm-_LKNOcu8ppF60zW94xmG3JfhKIMond3cD9Rus-EXWfkCW9c2t8n1s8bwEAjmgt-NUWx-Ia3Ysc27v9rHLlCKJgtnucEQDHxplgmaa4NeidsBlQMH9o94PmnIBqeh4fMoUNhRF8XFNrUwJ5SbimTD6V6cUmDVCWnfXG2Do7outHs2LREzRNuMbsHYWxrbuEbeImTiG3ei_f1RCEt-oFEsbS3yMyHAgtms",
       "status": "publicado",
-      "dataCriacao": "2024-05-24T10:00:00.000Z",
+      "dataCriacao": "2026-05-24T10:00:00.000Z",
       "administradorId": "1"
     },
     {
@@ -23,16 +23,16 @@
       "conteudo": "A indústria de semicondutores atinge um novo marco com a arquitetura que promete reduzir o consumo em até 45% mantendo o desempenho. Os novos chips de 2 nanômetros representam um salto significativo na miniaturização dos transistores.\n\nAs principais fabricantes, incluindo TSMC e Samsung, já iniciaram a produção em massa. Os primeiros dispositivos com essa tecnologia devem chegar ao mercado no quarto trimestre de 2025.\n\nAnalistas do setor apontam que a eficiência energética desses processadores pode revolucionar desde smartphones até data centers, contribuindo significativamente para a redução da pegada de carbono da indústria de tecnologia.",
       "imagemCapa": "https://lh3.googleusercontent.com/aida-public/AB6AXuC_aAjPEvaCaJbVeoEbA151Nu4SLDCUuC8a03yCTiXFYtgPzAG3QvOdCv_BB8VkV4e8JmrPgP5OmeABLEmlbvqYDbS08nH6sZ6xVkwLVcBY-37ZzzMKbYKlebYv2qxA8vA0GItcJ-X90trgz21f03apgoXCYQlKgSBZu83n8XfQKO7sv2lmt3ZRsP5wQQx5McrQyL83t7L9zRWu7v12ENQovGHU_eSdAzJsEGiFp3-7qylBr0ouc85ziL-I0yJ-tMaiDSSd5sQKrVc",
       "status": "publicado",
-      "dataCriacao": "2024-05-23T09:30:00.000Z",
+      "dataCriacao": "2026-05-23T09:30:00.000Z",
       "administradorId": "1"
     },
     {
       "id": "3",
       "titulo": "Falha crítica no protocolo Zero-Trust é descoberta por pesquisadores brasileiros",
-      "conteudo": "O bug permite a bypass total de autenticação em redes corporativas de alto nível, exigindo patches imediatos em escala global. Pesquisadores da Universidade de São Paulo identificaram a vulnerabilidade que afeta implementações de Zero-Trust em ambientes híbridos.\n\nA falha, classificada como CVE-2024-8847, permite que atacantes contornem camadas de verificação, obtendo acesso irrestrito a recursos protegidos. As gigantes de cibersegurança já estão mobilizadas para liberar correções emergenciais.\n\nEste incidente reacende o debate sobre a adoção apressada de frameworks de segurança sem testes rigorosos de penetração. Especialistas recomendam auditorias completas e testes regulares de infraestrutura.",
+      "conteudo": "O bug permite a bypass total de autenticação em redes corporativas de alto nível, exigindo patches imediatos em escala global. Pesquisadores da Universidade de São Paulo identificaram a vulnerabilidade que afeta implementações de Zero-Trust em ambientes híbridos.\n\nA falha, classificada como CVE-2026-8847, permite que atacantes contornem camadas de verificação, obtendo acesso irrestrito a recursos protegidos. As gigantes de cibersegurança já estão mobilizadas para liberar correções emergenciais.\n\nEste incidente reacende o debate sobre a adoção apressada de frameworks de segurança sem testes rigorosos de penetração. Especialistas recomendam auditorias completas e testes regulares de infraestrutura.",
       "imagemCapa": "https://lh3.googleusercontent.com/aida-public/AB6AXuBrgFZhE0iPx3S8KnhERNCz8FDNv0v4FvBcrWnuxU3-ZcdfneZeiwkUbHcn_nbnm2xihkDnntg1WcOW7lcHLiD8-hVlp_bIkHHkQYzrsk0X3WwWVicL_bRTgxczcV9TmJGWZ6dEN4ZVkE8uq002RoJOa76tY4CVBNaHoPu3u6e80mcuQRJ9VBgP7j2Eq2Kr9MX0IOICr1UjNeoKJnrw8-xnfUZCMyE4tb7KAOqm7s5M9tRz3M90DL0eWnggtmq5tclN1bo6JrlwmUA",
       "status": "publicado",
-      "dataCriacao": "2024-05-22T14:00:00.000Z",
+      "dataCriacao": "2026-05-22T14:00:00.000Z",
       "administradorId": "1"
     },
     {
@@ -41,25 +41,25 @@
       "conteudo": "Testamos por 30 dias o novo topo de linha dobrável. A durabilidade finalmente justifica o investimento premium? Nossa equipe de reviews colocou o Foldable Pro 5 à prova em cenários reais do dia a dia.\n\nCom uma tela AMOLED dinâmica de 7.6 polegadas quando aberto e 6.2 polegadas na configuração fechada, o dispositivo impressiona pela versatilidade. A dobradiça de terceira geração eliminou quase completamente o vinco central, um ponto crítico das gerações anteriores.\n\nO preço de R$ 12.999 ainda é uma barreira significativa para a adoção em massa, mas a qualidade de construção e a experiência multitarefa fazem deste o primeiro dobrável que recomendamos sem ressalvas para entusiastas de tecnologia.",
       "imagemCapa": "https://lh3.googleusercontent.com/aida-public/AB6AXuAM7nZ5yhfGX4AG_E1Ky9wldjazjInnEIClalg-o5-sOu1qiAG8OFTq59zPFIw2J6pY0ztIlUOVBtq5QBj4lvgCC3VY-HfATRD0QEqbC8YkVB5FpC23kONub9jgfDTwvZN-GdzO_YCD81dZwjzrmmTH-LE7DgNyBX618esHusWhyQqVjMwycQYfW7ph_YuG2_0ZqZn7V5x4TJZX9-r25s5SfWQz3Zm2FEbj1WNJejUfBtKlCEdc2VQZrm4Tz1cYU3kTZNKCOR6WVqs",
       "status": "publicado",
-      "dataCriacao": "2024-05-21T11:15:00.000Z",
+      "dataCriacao": "2026-05-21T11:15:00.000Z",
       "administradorId": "1"
     },
     {
       "id": "5",
       "titulo": "O impacto do 'Halving' silenciou os céticos? Uma análise profunda do mercado",
-      "conteudo": "Dados mostram uma retenção histórica de mineradores institucionais apesar da redução nas recompensas por bloco. O halving do Bitcoin, que reduz pela metade a recompensa dos mineradores a cada quatro anos, sempre foi um evento divisor de águas no mercado.\n\nDiferente dos halvings anteriores, onde houve êxodo significativo de mineradores menores, a edição de 2024 viu um aumento na taxa de hash global de 12% nos primeiros 30 dias pós-evento.\n\nInvestidores institucionais, incluindo fundos soberanos e empresas com capital de giro em Bitcoin, mantiveram suas posições, sinalizando uma maturidade inédita no mercado de criptoativos. O BTC acumula alta de 28% desde o halving.",
+      "conteudo": "Dados mostram uma retenção histórica de mineradores institucionais apesar da redução nas recompensas por bloco. O halving do Bitcoin, que reduz pela metade a recompensa dos mineradores a cada quatro anos, sempre foi um evento divisor de águas no mercado.\n\nDiferente dos halvings anteriores, onde houve êxodo significativo de mineradores menores, a edição de 2026 viu um aumento na taxa de hash global de 12% nos primeiros 30 dias pós-evento.\n\nInvestidores institucionais, incluindo fundos soberanos e empresas com capital de giro em Bitcoin, mantiveram suas posições, sinalizando uma maturidade inédita no mercado de criptoativos. O BTC acumula alta de 28% desde o halving.",
       "imagemCapa": "https://lh3.googleusercontent.com/aida-public/AB6AXuAcjt1_RY6wuKAa6m_dOYli-EYlUTD2sXBf6m-svruGKcM3M-sSzofN0qlpQbX2ONYHLAPv_5zvuugh64ny_qJEFDXmypHQ8LtyTZDWMLIgTVrhCcRX7ZMuyvSNhc3YrTtAblR8tvBokRUCZjHBWXk6l8CmMkvG7UGzPi0qNH3O7ALdmcj9FwAXy-7xkHQD-gPukzs3qgmvWt6tTvh7ONyqndMj3U_vjsD60o5JV2MsVz3RH0-9H1ZWYZABssFEZyThgOFxrYL4FD8",
       "status": "publicado",
-      "dataCriacao": "2024-05-20T08:00:00.000Z",
+      "dataCriacao": "2026-05-20T08:00:00.000Z",
       "administradorId": "1"
     },
     {
       "id": "6",
-      "titulo": "Frameworks Web 2024: O retorno ao 'Server-Side' e o declínio das SPAs pesadas",
+      "titulo": "Frameworks Web 2026: O retorno ao 'Server-Side' e o declínio das SPAs pesadas",
       "conteudo": "Por que os desenvolvedores estão abandonando a complexidade do lado do cliente em favor de arquiteturas híbridas? A tendência é clara: frameworks como Next.js, Astro e SvelteKit estão priorizando a renderização no servidor.\n\nO movimento é uma resposta direta aos problemas de performance e SEO que as Single Page Applications (SPAs) tradicionais enfrentam. Métricas como Core Web Vitals do Google penalizam páginas com alto JavaScript hydration time.\n\nA abordagem 'islands architecture', popularizada pelo Astro, permite que apenas os componentes interativos sejam hidratados no cliente, enquanto o restante da página permanece HTML estático. O resultado: páginas até 90% mais leves com a mesma interatividade.",
       "imagemCapa": "https://lh3.googleusercontent.com/aida-public/AB6AXuAh6G8FpV-cWwO6z4IK0ZWlliIZbPdLMEekiyQ0vpDcVegyodr2x4U_cyXSiOKNJAeMFEo0QNEFl166WYVBIwOA6Ss6ST6LxmNUT6szi1glDSHvYCsh2pEI4xA9Jj8lTyErJOZz335xK2K7xBWfZbAqADA8GCAct33kEiRZkTpPDgPBey--JE6BwZtarjCjQ2OjZzm35Shbdp20EWBOCanCwOZ-NHIXs-i4rgSbwRSQS27mqJS-NtZqBn-cBTM8l_5uQPL2np6e7Tc",
       "status": "pendente",
-      "dataCriacao": "2024-05-19T16:45:00.000Z",
+      "dataCriacao": "2026-05-19T16:45:00.000Z",
       "administradorId": "1"
     },
     {
@@ -68,7 +68,7 @@
       "conteudo": "Novos algoritmos de visão computacional permitem que braços mecânicos realizem tarefas complexas sem programação prévia. A robótica colaborativa está entrando em uma nova era com a integração de modelos de aprendizado por imitação.\n\nDiferente dos robôs industriais tradicionais que exigem programação rígida, os novos cobots utilizam câmeras e sensores de profundidade para mapear movimentos humanos e replicá-los com precisão milimétrica.\n\nFábricas na Alemanha e no Japão já estão adotando a tecnologia em linhas de montagem automotivas, reportando aumentos de produtividade de 35% e redução de 60% no tempo de treinamento de novos processos.",
       "imagemCapa": "https://lh3.googleusercontent.com/aida-public/AB6AXuA2ppx0qOi7nZHsETsn1TgMSxuXuWsFC7DlxpIWaNAJ-WBBVZpc9PWZkEe4jwUIZjENzoa6NmNMkox1B8jdOwgcAvJb5WMidOv5R4M4lbCOiJ57OW10svFIkL8uLjABGeJO2isMEqwVWcr_hgJVpi0ATUkFJDzmugGtgvMJxRXJ2TTKviz5Ei9LoBsUyJA1vtHQUniUMFSfWqZjukqCeqwIgso1mjw4ZNMzculrXuUk5IlDcD8iXQE8yvtPgpYZHZhI88DgmEU5l_I",
       "status": "despublicado",
-      "dataCriacao": "2024-05-18T13:30:00.000Z",
+      "dataCriacao": "2026-05-18T13:30:00.000Z",
       "administradorId": "1"
     }
   ]

@@ -1,3 +1,7 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use "sass:color";
+
 // =============================================================
 // _components.scss - Componentes Customizados | Jornal Tech
 // =============================================================
@@ -6,7 +10,7 @@
 .ticker-bar {
   background: #0a0e17;
   color: #fff;
-  padding: 0.375rem 1.5rem;
+  padding: 0.375rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
   font-size: 0.75rem;
@@ -225,15 +229,15 @@
 
   &--publicado {
     background: rgba($success, 0.12);
-    color: darken($success, 10%);
+    color: color.adjust($success, $lightness: -10%, $space: hsl);
   }
   &--pendente {
     background: rgba($warning, 0.2);
-    color: darken($warning, 30%);
+    color: color.adjust($warning, $lightness: -30%, $space: hsl);
   }
   &--despublicado {
     background: rgba($danger, 0.1);
-    color: darken($danger, 5%);
+    color: color.adjust($danger, $lightness: -5%, $space: hsl);
   }
 }
 

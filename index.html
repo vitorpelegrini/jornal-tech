@@ -58,7 +58,7 @@
   <!-- 2. NAVBAR (ID 02, 04 - Bootstrap Navbar)                      -->
   <!-- ============================================================= -->
   <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top border-bottom" id="main-navbar">
-    <div class="container-editorial d-flex justify-content-between align-items-center w-100">
+    <div class="container-editorial w-100 d-flex flex-wrap align-items-center justify-content-between">
       <!-- Brand -->
       <a class="navbar-brand fw-bold" href="index.html" style="font-family: 'Manrope', sans-serif; font-size: 1.5rem; letter-spacing: -0.03em; color: #0057cd;">
         Jornal Tech
@@ -69,11 +69,11 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Links -->
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav gap-lg-4">
+      <!-- Links & CTA -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto gap-lg-4 mb-3 mb-lg-0 text-center">
           <li class="nav-item">
-            <a class="nav-link active fw-bold text-primary border-bottom border-2 border-primary pb-1" href="#">Mercado</a>
+            <a class="nav-link active fw-bold text-primary border-bottom border-2 border-primary pb-1 d-inline-block" href="#">Mercado</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-secondary" href="#">Crypto</a>
@@ -88,17 +88,17 @@
             <a class="nav-link text-secondary" href="#">Reviews</a>
           </li>
         </ul>
-      </div>
 
-      <!-- Search + CTA -->
-      <div class="d-flex align-items-center gap-3">
-        <div class="d-none d-lg-flex align-items-center bg-light rounded-pill px-3 py-1">
-          <span class="material-symbols-outlined text-secondary" style="font-size: 1.2rem;">search</span>
-          <input type="text" class="form-control form-control-sm border-0 bg-transparent shadow-none" placeholder="Pesquisar..." style="width: 8rem;">
+        <!-- Search + CTA -->
+        <div class="d-flex flex-column flex-lg-row align-items-center gap-3">
+          <div class="d-none d-lg-flex align-items-center bg-light rounded-pill px-3 py-1">
+            <span class="material-symbols-outlined text-secondary" style="font-size: 1.2rem;">search</span>
+            <input type="text" class="form-control form-control-sm border-0 bg-transparent shadow-none" placeholder="Pesquisar..." style="width: 8rem;">
+          </div>
+          <a href="login.html" class="btn btn-primary btn-sm fw-bold px-3 py-2 rounded-3 w-100 text-center" style="max-width: 200px;">
+            Acesso Restrito
+          </a>
         </div>
-        <a href="login.html" class="btn btn-primary btn-sm fw-bold px-3 py-2 rounded-3">
-          Acesso Restrito
-        </a>
       </div>
     </div>
   </nav>
@@ -214,7 +214,7 @@
 
       <!-- Bottom -->
       <div class="footer-custom__bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-        <p class="mb-0">© 2024 Jornal Tech. O Portal Editorial da Tecnologia.</p>
+        <p class="mb-0">© 2026 Jornal Tech. O Portal Editorial da Tecnologia.</p>
         <div class="d-flex gap-4" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em;">
           <span>Powered by Jornal Tech</span>
         </div>
